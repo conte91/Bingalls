@@ -1,0 +1,19 @@
+Fork Mantainer:
+- Simone Baratta -- Conte91 <at> gmail <dot> com
+
+Editors: 
+- Simone Baratta -- Conte91 <at> gmail <dot> com
+- Lucia Allara -- lucia.allara <at> gmail <dot> com
+
+This software is beerware.
+
+If we meet, you owe me a beer. Maybe two. Or even three.
+
+#####################################
+Tl;dr:
+Do what you want. 
+If you want to make money, ask the Fork Mantainer.
+#####################################
+
+You can redistribute this software as you want, you can even make money from it if you need, but in this last case you will have to inform the author(s). You will always have to attach this license to the software, to tell others who made it, and to respect the author's name for centuries and centuries.
+
