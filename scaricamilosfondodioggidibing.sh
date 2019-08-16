@@ -29,7 +29,7 @@ prendifoto () {
   numero=$((giorni))
   pagina=$(wget 'http://www.bing.com/HPImageArchive.aspx?format=xml&idx='"$numero"'&n=1&mkt='"$2"  -O  - 2>/dev/null)
 
-  immagine=$(echo "$pagina"|  sed -e "s:.*hprichbg/\(.*\)\.jpg</url>.*:www.bing.com/az/hprichbg/\1.jpg:")
+  immagine=$(echo "$pagina"|  sed -e 's:.*<url>\([^<]*\)</url>.*:www.bing.com/\1:')
 
   echo $immagine
 
