@@ -61,7 +61,7 @@ do
     echo "$quantigiorni mancapagarli"
   fi
 
-  if [ $quantigiorni -ge 20 ]
+  if [ $quantigiorni -ge 9 ]
   then
     echo "Too many giornis"
     break
