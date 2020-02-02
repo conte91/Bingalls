@@ -53,7 +53,7 @@ do
   quando=`date '+%Y-%m-%d' -d "$quantigiornifa days ago"`
 
   command="ls ${cartelladovefarecose}/${quando}_*"
-  if $command &>/dev/null
+  if $command >/dev/null 2>/dev/null
   then
     echo "Good"
     break
