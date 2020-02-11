@@ -36,7 +36,7 @@ prendifoto () {
   echo "La tua immagine si trova qui -> $immagine"
   data=`date +%Y-%m-%d -d "$giorni days ago"`
   echo "La data e' $data"
-  newname=$(basename ${immagine} | sed -e "s:\([^_]*\)_.*:${data}_\1.jpg:")
+  newname=$(basename ${immagine} | sed -e "s:[a-zA-Z=?]*\.\([^_]*\)_.*:${data}_\1.jpg:")
   echo "La tua immagine si salva qui -> ${newname}"
   wget "${immagine}" -O ${cartelladovefarecose}/"${newname}"
 }
@@ -49,7 +49,7 @@ quantigiorni=0
 
 while :
 do
-  quantigiornifa=$(($quantigiorni - 1))
+  quantigiornifa=$(($quantigiorni))
   quando=`date '+%Y-%m-%d' -d "$quantigiornifa days ago"`
 
   command="ls ${cartelladovefarecose}/${quando}_*"
@@ -61,7 +61,7 @@ do
     echo "$quantigiorni mancapagarli"
   fi
 
-  if [ $quantigiorni -ge 9 ]
+  if [ $quantigiorni -ge 10 ]
   then
     echo "Too many giornis"
     break
