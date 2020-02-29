@@ -38,12 +38,17 @@ prendifoto () {
   echo "La data e' $data"
   newname=$(basename ${immagine} | sed -e "s:[a-zA-Z=?]*\.\([^_]*\)_.*:${data}_\1.jpg:")
   echo "La tua immagine si salva qui -> ${newname}"
-  wget "${immagine}" -O ${cartelladovefarecose}/"${newname}"
+  wget "${immagine}" -O ${download_folder}/"${newname}"
 }
 
 centrafrase "Sono proprio felice di scaricare le immagini oggi"
 
-cartelladovefarecose=~/Pictures/Wallpapers/Varie/Bing
+if [ $# -eq 0 ]
+then
+	download_folder=~/Pictures/Wallpapers/Varie/Bing
+else
+	download_folder="$1"
+fi
 
 quantigiorni=0
 
@@ -52,7 +57,7 @@ do
   quantigiornifa=$(($quantigiorni))
   quando=`date '+%Y-%m-%d' -d "$quantigiornifa days ago"`
 
-  command="ls ${cartelladovefarecose}/${quando}_*"
+  command="ls ${download_folder}/${quando}_*"
   if $command >/dev/null 2>/dev/null
   then
     echo "Good"
